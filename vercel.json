@@ -6,6 +6,5 @@
       "dest": "/",
       "continue": true
     }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  ]
 }
