@@ -70,8 +70,8 @@ const Card: React.FC<CardProps> = ({
 
 export default function Contact() {
   return (
-    <section
-      id="Contact"
+    <div
+      id="contact"
       className="flex flex-col items-center justify-center pt-32 bg-gray-950 min-h-screen w-full"
     >
       <div className="flex flex-col items-center text-center py-8">
@@ -90,6 +90,6 @@ export default function Contact() {
           />
         ))}
       </div>
-    </section>
+    </div>
   );
 }

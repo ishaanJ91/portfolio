@@ -18,7 +18,7 @@ export default function About() {
 
   return (
     <div
-      id="contact"
+      id="about"
       className="section grid grid-cols-3 h-screen justify-center items-center bg-gray-950"
     >
       <div className="col-span-1 flex h-screen flex-col justify-center items-start pl-24 w-full">

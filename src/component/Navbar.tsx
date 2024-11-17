@@ -64,27 +64,6 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button className="mobile-menu-button p-2 rounded-md inline-flex items-center justify-center text-gray-400 hover:text-gray-200">
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
     </nav>

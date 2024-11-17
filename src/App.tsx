@@ -74,22 +74,16 @@ const App: React.FC = () => {
   }
 
   return (
-    <SmoothScrollWrapper>
+    <>
       <Navbar />
       <div className="bg-beige min-h-screen">
-        <div id="about">
-          <About />
-        </div>
+        <About />
         <HeadProj />
-        <div id="projects">
-          <Projects />
-        </div>
-        <div id="contacts">
-          <Contact />
-        </div>
+        <Projects />
+        <Contact />
         <Footer />
       </div>
-    </SmoothScrollWrapper>
+    </>
   );
 };
 
