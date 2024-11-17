@@ -46,7 +46,7 @@ const App: React.FC = () => {
   if (isSmallScreen) {
     return (
       <div className="flex items-center flex-col justify-center min-h-screen px-20 text-center bg-beige text-gray-950 lg:text-4xl text-3xl">
-        Device too small. Website still in progress. <br />
+        Device too small. Please use a larger device. <br />
         Thank you for your patience :)
         <div className="flex flex-row w-full justify-center items-center gap-4 pt-4 text-beige">
           <div className="flex flex-row justify-center items-center gap-4">
