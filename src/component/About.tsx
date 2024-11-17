@@ -17,12 +17,16 @@ export default function About() {
   const introRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="grid grid-cols-3 h-screen justify-center items-center">
-      <div className="col-span-1 flex h-screen flex-col justify-center items-start bg-gray-950 px-12 w-full">
+    <div
+      id="contact"
+      className="section grid grid-cols-3 h-screen justify-center items-center bg-gray-950"
+    >
+      <div className="col-span-1 flex h-screen flex-col justify-center items-start pl-24 w-full">
         <img
           src={profile}
-          className="items-start rounded-full min-w-64 h-64 object-cover mb-4"
+          className="rounded-full w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 object-cover mb-4"
         />
+
         <div className="flex flex-col text-beige items-start">
           <h2 className="text-6xl font-bold"> Ishaan Jain </h2>
           <p className="text-md text-left py-2">
@@ -41,13 +45,14 @@ export default function About() {
           </div>
         </div>
       </div>
+
       <div className="col-span-2 flex flex-col justify-start items-start px-24 py-20 w-full">
         <div ref={introRef} className="mb-12">
-          <div className="text-4xl text-left font-semibold">
+          <div className="text-4xl text-beige text-left font-semibold">
             Oh, hello there 👋
           </div>
           <div className="text-md text-left py-4">
-            <span className="text-xl">
+            <span className="text-xl text-beige">
               As a 2nd-year Computer Science student at Trinity College Dublin,
               I excel in full-stack development and solving complex problems.
               With strong academic and project experience in software
@@ -57,8 +62,8 @@ export default function About() {
             </span>
           </div>
         </div>
-        <div className="flex flex-row justify-between items-center text-2xl text-center gap-6">
-          <span className="text-2xl text-left border-r-2 border-black pr-4 font-semibold">
+        <div className="flex lg:flex-row md:flex-col sm:flex-col sm:justify-start sm:items-start lg:justify-between lg:items-center text-2xl text-center gap-6">
+          <span className="text-2xl text-left lg:border-r-2 lg:border-b-0 text-beige border-beige md:b-r-0 md:border-b-2 md:pr-0 md:pb-4 lg:pr-4 lg:pb-0 font-semibold">
             Tech Stack
           </span>
           <div className="tech-stack flex items-center gap-8">
