@@ -4,9 +4,9 @@ Welcome to my personal portfolio, which showcases my skills and projects as a so
 
 ## Technologies Used
 
-- **TypeScript**: Enhances JavaScript with type safety for more reliable code and developer productivity.
-- **ReactJS**: A powerful JavaScript library for building user interfaces with efficient, reusable components.
-- **TailwindCSS**: A utility-first CSS framework for rapidly building custom designs without leaving your HTML.
+- **TypeScript**
+- **ReactJS**
+- **TailwindCSS**
 
 ## Website
 
