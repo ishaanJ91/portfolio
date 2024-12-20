@@ -57,12 +57,12 @@ export default function About() {
         </div>
       </div>
 
-      <div className="col-span-2 flex flex-col justify-start sm:mt-8 xs:mt-24 items-start lg:px-24 py-20 md:px-16 sm:px-16 sm:py-2 xs:px-16 xs:py-2 w-full">
+      <div className="col-span-2 flex flex-col sm:justify-start sm:mt-8 xs:mt-24 sm:items-start xs:items-center xs:justify-center lg:px-24 py-20 md:px-16 sm:px-16 sm:py-2 xs:px-16 xs:py-2 w-full">
         <div ref={introRef} className="mb-12 md:mb-2 sm:mb-0 xs:mb-0">
-          <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-2xl text-beige md:text-left font-semibold">
+          <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-3xl xs:text-center text-beige md:text-left font-semibold">
             Oh, hello there 👋
           </div>
-          <div className="text-md sm:text-left xs:text-left py-4">
+          <div className="text-md sm:text-left xs:text-center py-4">
             <span className="xl:text-xl lg:text-base md:text-sm sm:text-base xs:text-base text-beige">
               As a 2nd-year Computer Science student at Trinity College Dublin,
               I excel in full-stack development and solving complex problems.
@@ -73,60 +73,60 @@ export default function About() {
             </span>
           </div>
         </div>
-        <div className="flex xl:flex-row flex-col xs:my-6 justify-start items-start xl:justify-between xl:items-center text-2xl text-center xl:gap-6 gap-5">
-          <span className="xl:text-2xl lg:text-xl md:text-base sm:text-xl xs:text-lg sm:mt-4 text-left xl:border-r-2 xl:border-b-0 text-beige border-beige b-r-0 border-b-2 pr-0 pb-1 xl:pr-4 xl:pb-0 font-semibold">
+        <div className="flex xl:flex-row flex-col xs:my-6 sm:justify-start sm:items-start xs:justify-center xs:items-center xl:justify-between xl:items-center xl:text-center text-2xl text-center xl:gap-6 gap-5">
+          <span className="xl:text-2xl xl:text-center xl:items-center xl:justify-center lg:text-xl md:text-base sm:text-xl xs:text-xl sm:mt-4 text-left xl:border-r-2 xl:border-b-0 text-beige border-beige b-r-0 border-b-2 pr-0 pb-1 xl:pr-4 xl:pb-0 font-semibold">
             Tech Stack
           </span>
-          <div className="tech-stack flex items-center xl:gap-8 lg:gap-6 md:gap-4 sm:gap-6 xs:gap-6">
-            <div className="flex flex-row gap-2">
+          <div className="sm:flex items-center xs:grid xs:py-6 xs:grid-cols-2 xs:justify-center xs:items-center xl:gap-8 lg:gap-6 md:gap-4 sm:gap-6 xs:gap-10">
+            <div className="flex flex-row gap-3">
               <img
                 src={htmlLogo}
                 alt="HTML5"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
               <img
                 src={cssLogo}
                 alt="CSS3"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
             </div>
 
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-3">
               <img
                 src={reactLogo}
                 alt="React"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
               <img
                 src={typescript}
                 alt="TypeScript"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
             </div>
 
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-3">
               <img
                 src={javaLogo}
                 alt="Java"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
               <img
                 src={pythonLogo}
                 alt="Python"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
             </div>
 
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-3">
               <img
                 src={tailwind}
                 alt="Tailwind"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
               <img
                 src={sass}
                 alt="Sass"
-                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-12 xs:h-12 rounded-md"
               />
             </div>
           </div>
