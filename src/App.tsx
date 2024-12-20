@@ -13,12 +13,12 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-950 min-h-screen">
+      <div className="bg-gray-950 min-h-screen max-w-7xl mx-auto">
         <About />
         {/* <HeadProj /> */}
-        {/* <Projects />
-        <Contact />
-        <Footer /> */}
+        {/* <Projects /> */}
+        {/* <Contact /> */}
+        {/* <Footer /> */}
       </div>
     </>
   );
