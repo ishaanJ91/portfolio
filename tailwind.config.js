@@ -2,6 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      xs: "300px",
+      sm: "530px",
+      md: "666px",
+      lg: "880px",
+      xl: "1200px",
+    },
     extend: {
       height: {
         "3/4": "70vh",

@@ -19,40 +19,51 @@ export default function About() {
   return (
     <div
       id="about"
-      className="section grid grid-cols-3 h-screen justify-center items-center bg-gray-950"
+      className="section md:grid md:grid-cols-3 sm:flex sm:flex-col xs:flex xs:flex-col sm:h-screen xs:h-fit justify-center items-center bg-gray-950"
     >
-      <div className="col-span-1 flex h-screen flex-col justify-center items-start pl-24 w-full">
+      <div className="col-span-1 flex md:flex-col sm:gap-10 sm:flex-row xs:gap-0 xs:flex-col xs:mt-40 md:mt-0 md:justify-start md:items-start sm:items-center sm:justify-center xs:items-center xs:justify-center lg:pl-24 md:pl-16 xs:pl-0 w-full">
         <img
           src={profile}
-          className="rounded-full w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 object-cover mb-4"
+          className="rounded-full 
+      lg:w-52 lg:h-52 xl:w-64 xl:h-64 md:w-44 md:h-44 sm:w-36 sm:h-36 xs:w-64 xs:h-64
+      object-cover mb-4"
         />
 
-        <div className="flex flex-col text-beige items-start">
-          <h2 className="text-6xl font-bold"> Ishaan Jain </h2>
-          <p className="text-md text-left py-2">
-            Computer Science Student @ Trinity College Dublin, Ireland |
-            Full-Stack Dev
+        <div className="flex flex-col text-beige sm:items-start xs:items-center">
+          <h2 className="xl:text-6xl lg:text-4xl  md:text-3xl sm:text-4xl xs:text-5xl xs:pt-2 font-bold">
+            Ishaan Jain
+          </h2>
+          <p className="xl:text-base md:text-xs lg:text-sm sm:text-xs sm:w-60 md:w-fit sm:py-1 xs:text-base xs:w-60 xs:py-1 xs:text-center sm:text-left py-2">
+            Student @ Trinity College Dublin, Ireland | Full-Stack Dev
           </p>
 
-          <div className="flex flex-row gap-4 pt-4">
+          <div className="flex flex-row gap-4 pt-4 md:pt-2 sm:pt-3 xs:pt-2 md:gap-3">
             <a href="https://github.com/ishaanJ91" target="_blank">
-              <img src={github_black} alt="GitHub" className="w-9 h-9" />
+              <img
+                src={github_black}
+                alt="GitHub"
+                className="lg:w-9 lg:h-9 md:w-6 md:h-6 sm:h-6 sm:w-6 xs:h-8 xs:w-8"
+              />
             </a>
 
             <a href="https://www.linkedin.com/in/ishaanj9/" target="_blank">
-              <img src={linked_black} alt="LinkedIn" className="w-9 h-9" />
+              <img
+                src={linked_black}
+                alt="LinkedIn"
+                className="lg:w-9 lg:h-9 md:w-6 md:h-6 sm:h-6 sm:w-6 xs:h-8 xs:w-8"
+              />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="col-span-2 flex flex-col justify-start items-start px-24 py-20 w-full">
-        <div ref={introRef} className="mb-12">
-          <div className="text-4xl text-beige text-left font-semibold">
+      <div className="col-span-2 flex flex-col justify-start sm:mt-8 xs:mt-24 items-start lg:px-24 py-20 md:px-16 sm:px-16 sm:py-2 xs:px-16 xs:py-2 w-full">
+        <div ref={introRef} className="mb-12 md:mb-2 sm:mb-0 xs:mb-0">
+          <div className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-2xl text-beige md:text-left font-semibold">
             Oh, hello there 👋
           </div>
-          <div className="text-md text-left py-4">
-            <span className="text-xl text-beige">
+          <div className="text-md sm:text-left xs:text-left py-4">
+            <span className="xl:text-xl lg:text-base md:text-sm sm:text-base xs:text-base text-beige">
               As a 2nd-year Computer Science student at Trinity College Dublin,
               I excel in full-stack development and solving complex problems.
               With strong academic and project experience in software
@@ -62,39 +73,47 @@ export default function About() {
             </span>
           </div>
         </div>
-        <div className="flex lg:flex-row md:flex-col sm:flex-col sm:justify-start sm:items-start lg:justify-between lg:items-center text-2xl text-center gap-6">
-          <span className="text-2xl text-left lg:border-r-2 lg:border-b-0 text-beige border-beige md:b-r-0 md:border-b-2 md:pr-0 md:pb-4 lg:pr-4 lg:pb-0 font-semibold">
+        <div className="flex xl:flex-row flex-col xs:my-6 justify-start items-start xl:justify-between xl:items-center text-2xl text-center xl:gap-6 gap-5">
+          <span className="xl:text-2xl lg:text-xl md:text-base sm:text-xl xs:text-lg sm:mt-4 text-left xl:border-r-2 xl:border-b-0 text-beige border-beige b-r-0 border-b-2 pr-0 pb-1 xl:pr-4 xl:pb-0 font-semibold">
             Tech Stack
           </span>
-          <div className="tech-stack flex items-center gap-8">
+          <div className="tech-stack flex items-center xl:gap-8 lg:gap-6 md:gap-4 sm:gap-6 xs:gap-6">
             <div className="flex flex-row gap-2">
               <img
                 src={htmlLogo}
                 alt="HTML5"
-                className="w-12 h-12 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
               />
-              <img src={cssLogo} alt="CSS3" className="w-12 h-12 rounded-md" />
+              <img
+                src={cssLogo}
+                alt="CSS3"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+              />
             </div>
 
             <div className="flex flex-row gap-2">
               <img
                 src={reactLogo}
                 alt="React"
-                className="w-12 h-12 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
               />
               <img
                 src={typescript}
                 alt="TypeScript"
-                className="w-12 h-12 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
               />
             </div>
 
             <div className="flex flex-row gap-2">
-              <img src={javaLogo} alt="Java" className="w-12 h-12 rounded-md" />
+              <img
+                src={javaLogo}
+                alt="Java"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+              />
               <img
                 src={pythonLogo}
                 alt="Python"
-                className="w-12 h-12 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
               />
             </div>
 
@@ -102,9 +121,13 @@ export default function About() {
               <img
                 src={tailwind}
                 alt="Tailwind"
-                className="w-12 h-12 rounded-md"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
               />
-              <img src={sass} alt="Sass" className="w-12 h-12 rounded-md" />
+              <img
+                src={sass}
+                alt="Sass"
+                className="xl:w-12 xl:h-12 lg:w-11 lg:h-11 md:w-7 md:h-7 sm:w-9 sm:h-9 xs:w-7 xs:h-7 rounded-md"
+              />
             </div>
           </div>
         </div>

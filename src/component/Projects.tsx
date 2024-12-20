@@ -103,7 +103,7 @@ export default function Projects() {
         end: () => `+=${totalScrollWidth}`, // Dynamically calculated
         pin: true,
         scrub: 1,
-        markers: true,
+        markers: false,
       },
     });
 
