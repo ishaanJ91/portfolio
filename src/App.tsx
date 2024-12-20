@@ -13,7 +13,7 @@ const App: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-950 min-h-screen max-w-7xl mx-auto">
+      <div className="bg-gray-950 min-h-screen max-w-1400 mx-auto">
         <About />
         {/* <HeadProj /> */}
         {/* <Projects /> */}

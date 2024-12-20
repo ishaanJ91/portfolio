@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-950 w-full fixed z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-1400 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <span className="text-gray-200 text-xl font-medium">
             Ishaan Jain.
