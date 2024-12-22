@@ -107,7 +107,7 @@ export default function Projects() {
           pin: true,
           scrub: 1,
           markers: false,
-          anticipatePin: 1, // improves smoother transitions
+          invalidateOnRefresh: true,
         },
       });
 
