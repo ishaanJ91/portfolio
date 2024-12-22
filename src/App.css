@@ -16,3 +16,8 @@
   height: 100%;
   width: 100%;
 }
+
+.project-container {
+  overflow-x: auto;
+  height: 100vh;
+}

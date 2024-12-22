@@ -107,6 +107,7 @@ export default function Projects() {
           pin: true,
           scrub: 1,
           markers: false,
+          invalidateOnRefresh: true,
         },
       });
 
@@ -118,6 +119,14 @@ export default function Projects() {
 
     updateScrollWidth();
     window.addEventListener("resize", updateScrollWidth);
+
+    document.addEventListener(
+      "touchmove",
+      (event) => {
+        event.preventDefault();
+      },
+      { passive: false }
+    );
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
