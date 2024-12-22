@@ -16,14 +16,17 @@
   height: 100%;
   width: 100%;
 }
-
 .project-container {
-  overflow-x: hidden;
-  overflow-y: hidden; /* Ensure no vertical scroll happens */
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: scroll; /* Allow horizontal scrolling for touch devices */
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  scroll-snap-type: x mandatory; /* Snaps to cards on scroll */
 }
 
 .project-inner-container {
   display: flex;
-  gap: 10vw; /* Maintains spacing between project cards */
-  transition: transform 0.3s ease-out; /* Smoother transitions */
+  gap: 10vw; /* Space between cards */
+  scroll-snap-align: center; /* Align cards at center */
+  width: max-content; /* Ensure the container is wide enough */
 }

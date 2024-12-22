@@ -120,29 +120,44 @@ export default function Projects() {
     updateScrollWidth();
     window.addEventListener("resize", updateScrollWidth);
 
+    const innerContainer = containerRef.current?.querySelector(
+      ".project-inner-container"
+    );
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    const handleTouchStart = (e) => {
+      isDragging = true;
+      startX = e.touches ? e.touches[0].pageX : e.pageX;
+      scrollLeft = innerContainer.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.touches ? e.touches[0].pageX : e.pageX;
+      const walk = (x - startX) * 2; // Adjust scrolling speed
+      innerContainer.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleTouchEnd = () => {
+      isDragging = false;
+    };
+
+    innerContainer?.addEventListener("touchstart", handleTouchStart);
+    innerContainer?.addEventListener("touchmove", handleTouchMove);
+    innerContainer?.addEventListener("touchend", handleTouchEnd);
+
+    // Cleanup on unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       window.removeEventListener("resize", updateScrollWidth);
+      innerContainer?.removeEventListener("touchstart", handleTouchStart);
+      innerContainer?.removeEventListener("touchmove", handleTouchMove);
+      innerContainer?.removeEventListener("touchend", handleTouchEnd);
     };
-  }, []);
-
-  useEffect(() => {
-    const innerContainer = containerRef.current?.querySelector(
-      ".project-inner-container"
-    ) as HTMLElement;
-
-    if (innerContainer) {
-      innerContainer.style.scrollBehavior = "smooth";
-
-      const handleTouchStart = (e) => {
-        e.preventDefault();
-      };
-
-      innerContainer.addEventListener("touchstart", handleTouchStart);
-      return () => {
-        innerContainer.removeEventListener("touchstart", handleTouchStart);
-      };
-    }
   }, []);
 
   return (
