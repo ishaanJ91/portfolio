@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import gsap, { TweenLite } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import landsat from "../assets/landsat.gif";
@@ -99,28 +99,42 @@ export default function Projects() {
       const totalScrollWidth =
         projectsData.length * (cardWidth + gap) - containerWidth;
 
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: `+=${totalScrollWidth}`,
-          pin: true,
-          scrub: 1,
-          markers: false,
-          invalidateOnRefresh: true,
-        },
+      const races = containerRef.current?.querySelector(
+        ".project-inner-container"
+      );
+
+      // Ensure the scroll amount is calculated correctly
+      const getScrollAmount = () => {
+        const racesWidth = races?.scrollWidth || 0;
+        return -(racesWidth - containerWidth); // Properly calculate the scroll amount
+      };
+
+      // GSAP Timeline setup for horizontal scroll animation
+      const tween = gsap.to(races, {
+        x: getScrollAmount(),
+        duration: 3,
+        ease: "none",
       });
 
-      timeline.to(".project-inner-container", {
-        x: -totalScrollWidth,
-        ease: "none",
+      // Setup ScrollTrigger for scroll-based animation
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top top", // Start when the container hits the top of the screen
+        end: () => `+=${getScrollAmount() * -1}`, // Dynamically calculated end position
+        pin: true, // Pin the container during scrolling
+        scrub: 1, // Smooth scrolling effect
+        markers: false, // Optional markers for debugging
+        animation: tween, // Link GSAP animation with ScrollTrigger
+        invalidateOnRefresh: true, // Recalculate ScrollTrigger on refresh
       });
     };
 
+    // Initialize scroll width calculation on page load and resize
     updateScrollWidth();
     window.addEventListener("resize", updateScrollWidth);
 
     return () => {
+      // Cleanup ScrollTrigger and remove resize listener
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       window.removeEventListener("resize", updateScrollWidth);
     };

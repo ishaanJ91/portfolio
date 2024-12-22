@@ -19,5 +19,5 @@
 
 .project-container {
   height: 100vh;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
