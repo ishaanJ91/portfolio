@@ -126,6 +126,25 @@ export default function Projects() {
     };
   }, []);
 
+  useEffect(() => {
+    const innerContainer = containerRef.current?.querySelector(
+      ".project-inner-container"
+    ) as HTMLElement;
+
+    if (innerContainer) {
+      innerContainer.style.scrollBehavior = "smooth";
+
+      const handleTouchStart = (e) => {
+        e.preventDefault();
+      };
+
+      innerContainer.addEventListener("touchstart", handleTouchStart);
+      return () => {
+        innerContainer.removeEventListener("touchstart", handleTouchStart);
+      };
+    }
+  }, []);
+
   return (
     <>
       <div className="my-20">
