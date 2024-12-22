@@ -140,6 +140,33 @@ export default function Projects() {
     };
   }, []);
 
+  // Scroll Handler for Horizontal Scrolling (when user scrolls vertically)
+  const handleWheel = (e: WheelEvent) => {
+    const container = containerRef.current;
+    if (container) {
+      // Prevent the default vertical scroll behavior
+      e.preventDefault();
+
+      // Scroll horizontally based on vertical scroll
+      container.scrollLeft += e.deltaY; // e.deltaY is the vertical scroll distance
+    }
+  };
+
+  // Attach the wheel event listener to the container
+  useEffect(() => {
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    // Clean up event listener when the component unmounts
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleWheel);
+      }
+    };
+  }, []);
+
   return (
     <>
       <div className="my-20">
@@ -197,7 +224,7 @@ export default function Projects() {
                               className="lg:w-6 lg:h-6 md:w-5 md:h-5 xs:w-5 xs:h-5 object-contain"
                             />
                             <span className="text-gray-950 lg:text-base md:text-sm xs:text-sm">
-                              Github <b>↗</b>
+                              Github <b>&#xFE0E;↗</b>
                             </span>
                           </a>
                         </div>
