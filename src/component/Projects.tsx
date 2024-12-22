@@ -40,7 +40,7 @@ const projectsData: Project[] = [
     description:
       "a MERN stack application that visualizes NDVI data, allowing users to examine global vegetation health.",
     image: landsat,
-    languages: [reactLogo, nodeLogo, tailwindLogo, mongodbLogo],
+    languages: [reactLogo, tailwindLogo, mongodbLogo],
     deployed: "Deployed • October 2024",
     github: "https://github.com/ishaanJ91/landsat",
   },
@@ -60,7 +60,7 @@ const projectsData: Project[] = [
     description:
       "is a MERN stack clone that replicates Airbnb's key features, allowing users to search, book, and manage accommodations.",
     image: airbnb,
-    languages: [reactLogo, nodeLogo, tailwindLogo, mongodbLogo],
+    languages: [reactLogo, tailwindLogo, mongodbLogo],
     deployed: "Deployed • August 2024",
     github: "https://github.com/ishaanJ91/airdnd-clone",
   },
@@ -70,7 +70,7 @@ const projectsData: Project[] = [
     description:
       "is a web application that leverages public apis to provide details, comparisons, and historical data on cryptocurrencies.",
     image: crypto,
-    languages: [reactLogo, javascriptLogo, cssLogo, chartjsLogo],
+    languages: [reactLogo, javascriptLogo, cssLogo],
     deployed: "Deployed • July 2024",
     github: "https://github.com/ishaanJ91/Crypto-tracker",
   },
@@ -90,100 +90,120 @@ export default function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const containerWidth = window.innerWidth;
-    const cardWidth = containerWidth * 0.4; // 40vw, based on style
-    const gap = containerWidth * 0.1; // 10vw gap
-    const totalScrollWidth =
-      projectsData.length * (cardWidth + gap) - containerWidth;
+    const updateScrollWidth = () => {
+      const containerWidth =
+        containerRef.current?.offsetWidth || window.innerWidth;
+      const cardWidth =
+        containerWidth >= 666 ? containerWidth * 0.51 : containerWidth * 0.899;
+      const gap = containerWidth * 0.1;
+      const totalScrollWidth =
+        projectsData.length * (cardWidth + gap) - containerWidth;
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: () => `+=${totalScrollWidth}`, // Dynamically calculated
-        pin: true,
-        scrub: 1,
-        markers: false,
-      },
-    });
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: `+=${totalScrollWidth}`,
+          pin: true,
+          scrub: 1,
+          markers: false,
+        },
+      });
 
-    timeline.to(".project-inner-container", {
-      x: -totalScrollWidth, // Ensure it stops at the last card
-      ease: "none",
-    });
+      timeline.to(".project-inner-container", {
+        x: -totalScrollWidth,
+        ease: "none",
+      });
+    };
+
+    updateScrollWidth();
+    window.addEventListener("resize", updateScrollWidth);
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      window.removeEventListener("resize", updateScrollWidth);
     };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="project-container bg-gray-950 h-screen overflow-hidden"
-    >
-      <div className="flex items-center justify-between h-full">
+    <>
+      <div className="my-20">
         <div
-          className="project-inner-container flex"
-          style={{ paddingLeft: "5vw", paddingTop: "10vh", gap: "10vw" }}
+          id="projects"
+          className="flex justify-center items-center bg-gray-950 px-12 w-full"
         >
-          {projectsData.map((project) => (
+          <h2 className="xl:text-9xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-6xl font-black text-beige">
+            PROJECTS
+          </h2>
+        </div>
+        <div
+          ref={containerRef}
+          className="project-container bg-gray-950 h-screen overflow-hidden"
+        >
+          <div className="flex items-center justify-between h-full">
             <div
-              key={project.id}
-              className="project-card flex-shrink-0 bg-gray-300 bg-opacity-10 border-gray-600 border-4 text-beige p-8 rounded-xl"
-              style={{ width: "40vw", height: "80vh" }}
+              className="project-inner-container flex"
+              style={{ paddingLeft: "5vw", paddingTop: "10vh", gap: "10vw" }}
             >
-              <div className="flex flex-col justify-between h-full p-8">
-                <div className="flex flex-col gap-4">
-                  <span className="text-2xl text-gray-400 font-bold">
-                    <b className="text-white"> {project.title} </b>{" "}
-                    {project.description}
-                  </span>
+              {projectsData.map((project) => (
+                <div
+                  key={project.id}
+                  className="project-card flex-shrink-0 bg-gray-300 bg-opacity-10 border-gray-600 border-4 text-beige p-8 rounded-xl 
+                  xl:w-[50vw] xl:h-[80vh] lg:w-[50vw] lg:h-[80vh] md:w-[50vw] md:h-[60vh] xs:w-[90vw] xs:h-[60vh]"
+                >
+                  <div className="flex flex-col justify-between h-full xl:p-8 lg:p-4">
+                    <div className="flex flex-col gap-4">
+                      <span className="xs:text-lg md:text-xl lg:text-2xl text-gray-400 font-bold">
+                        <b className="text-white"> {project.title} </b>{" "}
+                        {project.description}
+                      </span>
 
-                  <div className="flex justify-between px-1">
-                    <div className="languages-list flex gap-4 py-2">
-                      {project.languages.map((lang, index) => (
-                        <img
-                          key={index}
-                          src={lang}
-                          alt={`${project.title} language ${index}`}
-                          className="w-7 h-7 object-contain"
-                        />
-                      ))}
+                      <div className="flex flex-row justify-between px-1">
+                        <div className="languages-list flex gap-4 py-2">
+                          {project.languages.map((lang, index) => (
+                            <img
+                              key={index}
+                              src={lang}
+                              alt={`${project.title} language ${index}`}
+                              className="xl:w-7 xl:h-7 lg:w-6 lg:h-6 md:w-6 md:h-6 xs:w-6 xs:h-6 object-contain"
+                            />
+                          ))}
+                        </div>
+                        <div className="flex xs:w-fit lg:mt-4 xl:mt-0 gap-4 py-2 bg-beige px-4 rounded-full">
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2"
+                          >
+                            <img
+                              src={githubLogo}
+                              alt={`${project.title} github`}
+                              className="lg:w-6 lg:h-6 md:w-5 md:h-5 xs:w-5 xs:h-5 object-contain"
+                            />
+                            <span className="text-gray-950 lg:text-base md:text-sm xs:text-sm">
+                              Github <b>↗</b>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex gap-4 py-2 bg-beige px-4 rounded-full">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        <img
-                          src={githubLogo}
-                          alt={`${project.title} github`}
-                          className="w-6 h-6 object-contain"
-                        />
-                        <span className="text-gray-950">
-                          Github <b>↗</b>
-                        </span>
-                      </a>
+
+                    <div className="rounded-lg flex-shrink-0">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} preview`}
+                        className="w-full rounded-md"
+                        style={{ maxHeight: "30vh" }}
+                      />
                     </div>
                   </div>
                 </div>
-
-                <div className="rounded-lg flex-shrink-0">
-                  <img
-                    src={project.image}
-                    alt={`${project.title} preview`}
-                    className="w-full rounded-md"
-                    style={{ maxHeight: "30vh" }}
-                  />
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

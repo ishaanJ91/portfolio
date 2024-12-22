@@ -16,7 +16,7 @@ const App: React.FC = () => {
       <div className="bg-gray-950 min-h-screen max-w-1400 mx-auto">
         <About />
         {/* <HeadProj /> */}
-        {/* <Projects /> */}
+        <Projects />
         {/* <Contact /> */}
         {/* <Footer /> */}
       </div>
