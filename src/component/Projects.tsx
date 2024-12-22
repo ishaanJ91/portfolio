@@ -107,12 +107,13 @@ export default function Projects() {
           pin: true,
           scrub: 1,
           markers: false,
+          anticipatePin: 1, // improves smoother transitions
         },
       });
 
       timeline.to(".project-inner-container", {
         x: -totalScrollWidth,
-        ease: "none",
+        ease: "none", // Use a smoother easing function
       });
     };
 

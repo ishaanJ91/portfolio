@@ -18,6 +18,12 @@
 }
 
 .project-container {
-  height: 100vh;
   overflow-x: hidden;
+  overflow-y: hidden; /* Ensure no vertical scroll happens */
+}
+
+.project-inner-container {
+  display: flex;
+  gap: 10vw; /* Maintains spacing between project cards */
+  transition: transform 0.3s ease-out; /* Smoother transitions */
 }
