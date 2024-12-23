@@ -61,7 +61,7 @@ const Card: React.FC<CardProps> = ({
     <a
       href={link}
       target="_blank"
-      className="text-blue-500 text-lg mt-auto self-start hover:text-blue-600"
+      className="text-blue-500 xs:mt-4 lg:mt-0 text-lg mt-auto self-start hover:text-blue-600"
     >
       {linkText}
     </a>
@@ -75,10 +75,12 @@ export default function Contact() {
       className="flex flex-col items-center justify-center pt-32 bg-gray-950 min-h-screen w-full"
     >
       <div className="flex flex-col items-center text-center py-8">
-        <h2 className="text-9xl font-black text-beige mb-4">CONTACT</h2>
+        <h2 className="xl:text-9xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-6xl font-black text-beige mb-4">
+          CONTACT
+        </h2>
       </div>
 
-      <div className="py-10 grid grid-cols-2 gap-6 md:grid-cols-2 xl:grid-cols-2 w-full max-w-6xl">
+      <div className="py-10 grid gap-6 xl:w-full md:grid-cols-2 md:w-3/4 xs:grid-cols-1 xs:w-3/4 xl:grid-cols-2 max-w-6xl">
         {cardData.map((card, index) => (
           <Card
             key={index}

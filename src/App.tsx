@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <About />
         {/* <HeadProj /> */}
         <Projects />
-        {/* <Contact /> */}
+        <Contact />
         {/* <Footer /> */}
       </div>
     </>
