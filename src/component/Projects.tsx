@@ -182,7 +182,7 @@ export default function Projects() {
               className={`project-card flex-shrink-0 bg-gray-300 bg-opacity-10 border-gray-600 border-4 text-beige p-8 rounded-xl 
                 ${
                   isMobileView
-                    ? "md:w-[70vw] md:h-[70vh] xs:w-[75vw] xs:h-[65vh]"
+                    ? "md:w-[70vw] md:h-[70vh] xs:w-[75vw] xs:h-[73vh]"
                     : "xl:w-[50vw] xl:h-[80vh] lg:w-[50vw] lg:h-[80vh]"
                 }`}
             >
@@ -222,7 +222,7 @@ export default function Projects() {
                         <span className="text-gray-950 lg:text-base md:text-sm xs:text-sm">
                           Github{" "}
                           <b>
-                            <span>↗</span>
+                            <span>↗&#xFE0E;</span>
                           </b>
                         </span>
                       </a>
