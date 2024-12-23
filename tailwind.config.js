@@ -15,11 +15,16 @@ module.exports = {
       },
       colors: {
         beige: "#efece3",
+        "dark-blue-ps": "rgb(13, 27, 64)",
         "beige-dark": "rgba(32, 32, 32)",
+        "project-card-bg": "rgb(24,28,38)",
       },
       borderWidth: {
         1: "1.5px",
         3: "3px",
+      },
+      borderColor: {
+        "border-color": "rgb(75,85,99)",
       },
       maxWidth: {
         1400: "1400px",

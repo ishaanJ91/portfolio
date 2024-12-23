@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
 
+import { ThemeProvider } from "./component/ThemeContext";
 import About from "./component/About";
 import Navbar from "./component/Navbar";
 import Projects from "./component/Projects";
@@ -10,15 +11,15 @@ import Footer from "./component/Footer";
 
 const App: React.FC = () => {
   return (
-    <>
+    <ThemeProvider>
       <Navbar />
-      <div className="bg-gray-950 min-h-screen max-w-1400 mx-auto">
+      <div className="bg-background text-primary min-h-screen max-w-1400 mx-auto">
         <About />
         <Projects />
         <Contact />
         <Footer />
       </div>
-    </>
+    </ThemeProvider>
   );
 };
 

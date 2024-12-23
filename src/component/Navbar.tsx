@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { useTheme } from ".//ThemeContext";
 import menuW from "../assets/hamburger-white.svg";
 import back from "../assets/back.svg";
+import light from "../assets/light.svg";
+import dark from "../assets/dark.svg";
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isLightMode, toggleTheme } = useTheme();
+  const [active, setActive] = React.useState("Home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
   const navTags = ["About", "Projects", "Contact"];
 
-  const handleSetActive = (link) => {
+  const handleSetActive = (link: string) => {
     setActive(link);
     setIsMobileMenuOpen(false); // Close mobile menu on link click
     const element = document.getElementById(link.toLowerCase());
@@ -43,17 +48,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-blue-950 w-full fixed z-50">
+    <nav className="bg-dark-blue-ps w-full fixed z-50">
       <div className="max-w-1400 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <span className="text-gray-200 text-xl font-medium">
-            Ishaan Jain.
-          </span>
-          <div className="md:hidden">
+          <span className="text-beige text-xl font-medium">Ishaan Jain.</span>
+          <div className="flex items-center">
             {/* Hamburger menu */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-200 focus:outline-none"
+              className="text-primary md:hidden focus:outline-none"
             >
               <img src={menuW} alt="Menu" className="w-5 h-5" />
             </button>
@@ -65,25 +68,33 @@ export default function Navbar() {
                 onClick={() => handleSetActive(link)}
                 className={`text-lg font-medium px-3 py-2 rounded-md cursor-pointer transition-colors duration-200 ${
                   active === link
-                    ? "text-gray-200"
-                    : "text-gray-400 hover:text-gray-200"
+                    ? "text-beige"
+                    : "text-gray-400 hover:text-beige"
                 }`}
               >
                 {link}
               </a>
             ))}
+            {/* Theme toggle button */}
+            <button onClick={toggleTheme} className="mr-4 focus:outline-none">
+              <img
+                src={isLightMode ? dark : light}
+                alt="Toggle Theme"
+                className="w-5 h-5 opacity-60 hover:opacity-100"
+              />
+            </button>
           </div>
         </div>
       </div>
       {/* Animated Mobile Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-full bg-blue-900 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-full bg-background transform transition-transform duration-300 ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <button
           onClick={() => setIsMobileMenuOpen(false)}
-          className="absolute top-6 right-6 text-gray-200"
+          className="absolute top-6 right-6 text-primary"
         >
           <img src={back} alt="Back" className="w-7 h-7" />
         </button>
@@ -92,7 +103,7 @@ export default function Navbar() {
             <li key={link}>
               <a
                 onClick={() => handleSetActive(link)}
-                className={`block text-4xl font-medium text-gray-200 px-3 py-2 cursor-pointer`}
+                className={`block text-4xl font-medium text-primary px-3 py-2 cursor-pointer`}
               >
                 {link}
               </a>

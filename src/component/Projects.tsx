@@ -151,16 +151,16 @@ export default function Projects() {
     <div className="my-20">
       <div
         id="projects"
-        className="flex justify-center items-center bg-gray-950 px-12 w-full"
+        className="flex justify-center items-center bg-background px-12 w-full"
       >
-        <h2 className="xl:text-9xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-6xl font-black text-beige">
+        <h2 className="xl:text-9xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-6xl font-black text-primary">
           PROJECTS
         </h2>
       </div>
 
       <div
         ref={containerRef}
-        className={`project-container bg-gray-950 ${
+        className={`project-container bg-background ${
           isMobileView
             ? "flex flex-col gap-8 justify-center items-center"
             : "h-screen overflow-hidden"
@@ -179,7 +179,7 @@ export default function Projects() {
           {projectsData.map((project) => (
             <div
               key={project.id}
-              className={`project-card flex-shrink-0 bg-gray-300 bg-opacity-10 border-gray-600 border-4 text-beige p-8 rounded-xl 
+              className={`project-card flex-shrink-0 bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl 
                 ${
                   isMobileView
                     ? "md:w-[70vw] md:h-[70vh] xs:w-[75vw] xs:h-[73vh]"

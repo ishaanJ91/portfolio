@@ -1,5 +1,7 @@
 import React from "react";
-import github from "../assets/github.svg";
+import { useTheme } from "./ThemeContext"; // Corrected path
+import githubB from "../assets/github.svg";
+import githubW from "../assets/white-github.svg";
 import linkedin from "../assets/linkedin-original.svg";
 import substack from "../assets/substack-icon.svg";
 import google from "../assets/google-original.svg";
@@ -14,7 +16,7 @@ interface CardProps {
 
 const cardData: CardProps[] = [
   {
-    icon: github,
+    icon: githubB,
     title: "Projects",
     description:
       "I showcase personal projects and contribute to resolving issues on GitHub, either through code contributions or by reporting identified issues.",
@@ -53,29 +55,38 @@ const Card: React.FC<CardProps> = ({
   description,
   link,
   linkText,
-}) => (
-  <div className="flex flex-col justify-start items-start bg-beige rounded-lg p-6 gap-1 text-left">
-    <img src={icon} alt={title} className="h-10 w-10" />
-    <h3 className="text-2xl text-black font-semibold pt-2">{title}</h3>
-    <p className="text-lg text-gray-800 py-1">{description}</p>
-    <a
-      href={link}
-      target="_blank"
-      className="text-blue-500 xs:mt-4 lg:mt-0 text-lg mt-auto self-start hover:text-blue-600"
-    >
-      {linkText} <span className="text-sm">↗&#xFE0E;</span>
-    </a>
-  </div>
-);
+}) => {
+  const { isLightMode } = useTheme(); // Access theme state
+
+  // Switch GitHub logo dynamically for "Projects" card
+  const dynamicIcon =
+    title === "Projects" ? (isLightMode ? githubW : githubB) : icon;
+
+  return (
+    <div className="flex flex-col justify-start items-start bg-contact-card rounded-lg p-6 gap-1 text-left shadow-lg">
+      <img src={dynamicIcon} alt={title} className="h-10 w-10" />
+      <h3 className="text-2xl text-card-heading font-semibold pt-2">{title}</h3>
+      <p className="text-lg text-card-description py-1">{description}</p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 xs:mt-4 lg:mt-0 text-lg mt-auto self-start hover:text-blue-600"
+      >
+        {linkText} <span className="text-sm">↗&#xFE0E;</span>
+      </a>
+    </div>
+  );
+};
 
 export default function Contact() {
   return (
     <div
       id="contact"
-      className="flex flex-col items-center justify-center pt-32 bg-gray-950 min-h-screen w-full"
+      className="flex flex-col items-center justify-center pt-32 bg-contact min-h-screen w-full"
     >
       <div className="flex flex-col items-center text-center py-8">
-        <h2 className="xl:text-9xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-6xl font-black text-beige mb-4">
+        <h2 className="xl:text-9xl lg:text-8xl md:text-8xl sm:text-7xl xs:text-6xl font-black text-primary mb-4">
           CONTACT
         </h2>
       </div>
