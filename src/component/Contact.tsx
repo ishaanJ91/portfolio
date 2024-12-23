@@ -19,7 +19,7 @@ const cardData: CardProps[] = [
     description:
       "I showcase personal projects and contribute to resolving issues on GitHub, either through code contributions or by reporting identified issues.",
     link: "https://github.com/ishaanJ91",
-    linkText: "View profile ↗",
+    linkText: "View profile",
   },
   {
     icon: linkedin,
@@ -27,7 +27,7 @@ const cardData: CardProps[] = [
     description:
       "I share my professional journey on LinkedIn, including achievements and extracurriculars to build industry connections.",
     link: "https://www.linkedin.com/in/ishaanj9/",
-    linkText: "Connect ↗",
+    linkText: "Connect",
   },
   {
     icon: substack,
@@ -35,7 +35,7 @@ const cardData: CardProps[] = [
     description:
       "I write on Substack about productivity hacks, mental health tips, and a student's perspective on college life.",
     link: "https://ishaanjain91.substack.com/",
-    linkText: "Read ↗",
+    linkText: "Read",
   },
   {
     icon: google,
@@ -43,7 +43,7 @@ const cardData: CardProps[] = [
     description:
       "You can also easily reach me through Gmail for any inquiries.",
     link: "mailto:jaini@tcd.ie",
-    linkText: "Email me ↗",
+    linkText: "Email me",
   },
 ];
 
@@ -63,7 +63,7 @@ const Card: React.FC<CardProps> = ({
       target="_blank"
       className="text-blue-500 xs:mt-4 lg:mt-0 text-lg mt-auto self-start hover:text-blue-600"
     >
-      {linkText}
+      {linkText} <span className="text-sm">↗&#xFE0E;</span>
     </a>
   </div>
 );
