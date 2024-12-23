@@ -188,7 +188,7 @@ export default function Projects() {
             >
               <div className="flex flex-col justify-between h-full xl:p-8 lg:p-4">
                 <div className="flex flex-col gap-4">
-                  <span className="xs:text-lg md:text-xl lg:text-2xl text-gray-400 font-bold">
+                  <span className="xs:text-xl lg:text-2xl text-gray-400 font-bold">
                     <b className="text-white">{project.title}</b>{" "}
                     {project.description}
                   </span>

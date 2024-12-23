@@ -42,7 +42,7 @@ export default function About() {
               <img
                 src={github_black}
                 alt="GitHub"
-                className="lg:w-9 lg:h-9 md:w-6 md:h-6 sm:h-6 sm:w-6 xs:h-8 xs:w-8"
+                className="lg:w-9 lg:h-9 md:w-6 md:h-6 sm:h-6 sm:w-6 xs:h-8 xs:w-8 rounded-full"
               />
             </a>
 
