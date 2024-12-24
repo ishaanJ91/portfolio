@@ -183,7 +183,7 @@ export default function Projects() {
                 ${
                   isMobileView
                     ? "md:w-[70vw] md:h-[70vh] xs:w-[75vw] xs:h-[73vh]"
-                    : "xl:w-[50vw] xl:h-[80vh] lg:w-[50vw] lg:h-[80vh]"
+                    : "xl:w-[35vw] xl:h-[80vh] lg:w-[50vw] lg:h-[80vh]"
                 }`}
             >
               <div className="flex flex-col justify-between h-full xl:p-8 lg:p-4">
