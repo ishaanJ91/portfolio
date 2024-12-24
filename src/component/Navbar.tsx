@@ -51,12 +51,12 @@ export default function Navbar() {
     <nav className="bg-dark-blue-ps w-full fixed z-50">
       <div className="max-w-1400 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <span className="text-beige text-xl font-medium">Ishaan Jain.</span>
+          <span className="text-xl font-medium text-beige">Ishaan Jain.</span>
           <div className="flex items-center">
             {/* Hamburger menu */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-primary md:hidden focus:outline-none"
+              className="focus:outline-none md:hidden"
             >
               <img src={menuW} alt="Menu" className="w-5 h-5" />
             </button>
@@ -94,21 +94,42 @@ export default function Navbar() {
       >
         <button
           onClick={() => setIsMobileMenuOpen(false)}
-          className="absolute top-6 right-6 text-primary"
+          className="absolute top-6 right-6 focus:outline-none"
         >
-          <img src={back} alt="Back" className="w-7 h-7" />
+          <img src={back} className="bg-gray-950 rounded-full w-7 h-7" />
         </button>
         <ul className="flex flex-col items-center justify-center h-full space-y-8">
           {navTags.map((link) => (
             <li key={link}>
               <a
                 onClick={() => handleSetActive(link)}
-                className={`block text-4xl font-medium text-primary px-3 py-2 cursor-pointer`}
+                className={`block text-4xl font-medium cursor-pointer ${
+                  active === link
+                    ? isLightMode
+                      ? "text-black"
+                      : "text-beige"
+                    : isLightMode
+                    ? "text-gray-700 hover:text-black"
+                    : "text-gray-400 hover:text-beige"
+                }`}
               >
                 {link}
               </a>
             </li>
           ))}
+          {/* Theme toggle button for mobile */}
+          <li>
+            <button
+              onClick={toggleTheme}
+              className="mt-4 bg-gray-950 rounded-full p-3 focus:outline-none"
+            >
+              <img
+                src={isLightMode ? dark : light}
+                alt="Toggle Theme"
+                className="w-7 h-7 opacity-60  hover:opacity-100"
+              />
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
