@@ -234,7 +234,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={`${project.title} preview`}
-                    className="w-full rounded-md"
+                    className="w-full rounded-md object-contain"
                     style={{ maxHeight: "30vh" }}
                   />
                 </div>
