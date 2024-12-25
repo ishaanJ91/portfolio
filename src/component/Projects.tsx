@@ -9,7 +9,6 @@ import crypto from "../assets/crypto.png";
 import pomodoro from "../assets/pomodoro.png";
 
 import reactLogo from "../assets/react-original.svg";
-import nodeLogo from "../assets/nodejs-original.svg";
 import tailwindLogo from "../assets/tailwindcss-original.svg";
 import mongodbLogo from "../assets/mongodb-original.svg";
 import githubLogo from "../assets/github.svg";
@@ -17,7 +16,6 @@ import javascriptLogo from "../assets/javascript-original.svg";
 import pythonLogo from "../assets/python-original.svg";
 import matplotlibLogo from "../assets/matplotlib-original.svg";
 import kerasLogo from "../assets/keras-original.svg";
-import chartjsLogo from "../assets/chartjs-original.svg";
 import htmlLogo from "../assets/html5-plain.svg";
 import cssLogo from "../assets/css3-original.svg";
 
