@@ -18,15 +18,15 @@
 }
 .project-container {
   display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping */
-  overflow-x: scroll; /* Allow horizontal scrolling for touch devices */
-  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
-  scroll-snap-type: x mandatory; /* Snaps to cards on scroll */
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
 .project-inner-container {
   display: flex;
-  gap: 10vw; /* Space between cards */
-  scroll-snap-align: center; /* Align cards at center */
-  width: max-content; /* Ensure the container is wide enough */
+  gap: 10vw;
+  scroll-snap-align: center;
+  width: max-content;
 }

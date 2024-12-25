@@ -6,7 +6,6 @@ import About from "./component/About";
 import Navbar from "./component/Navbar";
 import Projects from "./component/Projects";
 import Contact from "./component/Contact";
-import SmoothScrollWrapper from "../src/SmoothScrollWrapper";
 import Footer from "./component/Footer";
 
 const App: React.FC = () => {

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useTheme } from ".//ThemeContext";
 
-import profile from "../assets/profile.png";
+import profile from "../assets/profile.webp";
 import github_black from "../assets/github-round-svgrepo-com (1).svg";
 import linked_black from "../assets/linkedin-round-svgrepo-com (1).svg";
 

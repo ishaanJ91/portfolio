@@ -28,6 +28,7 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior: none;
   background-color: var(--bg-color);
+  scroll-behavior: auto;
 }
 
 body {
@@ -41,6 +42,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 .text-project-card {

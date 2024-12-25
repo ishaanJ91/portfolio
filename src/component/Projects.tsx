@@ -207,7 +207,7 @@ export default function Projects() {
                         />
                       ))}
                     </div>
-                    <div className="flex xs:w-fit lg:mt-4 xl:mt-0 gap-4 py-2 bg-beige px-4 rounded-full">
+                    <div className="flex xs:w-fit lg:mt-0 xl:mt-0 gap-4 py-2 bg-beige px-4 rounded-full">
                       <a
                         href={project.github}
                         target="_blank"
