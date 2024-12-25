@@ -26,7 +26,8 @@ export default function About() {
       <div className="col-span-1 flex md:flex-col sm:gap-10 sm:flex-row xs:gap-0 xs:flex-col xs:mt-40 md:mt-0 md:justify-start md:items-start sm:items-center sm:justify-center xs:items-center xs:justify-center lg:pl-24 md:pl-16 xs:pl-0 w-full">
         <img
           src={profile}
-          className="rounded-full 
+          alt="profile picture"
+          className="rounded-full
       lg:w-52 lg:h-52 xl:w-64 xl:h-64 md:w-44 md:h-44 sm:w-36 sm:h-36 xs:w-64 xs:h-64
       object-cover mb-4"
         />

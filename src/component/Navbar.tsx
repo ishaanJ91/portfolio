@@ -94,9 +94,14 @@ export default function Navbar() {
       >
         <button
           onClick={() => setIsMobileMenuOpen(false)}
+          id="close-menu"
           className="absolute top-6 right-6 focus:outline-none"
         >
-          <img src={back} className="bg-gray-950 rounded-full w-7 h-7" />
+          <img
+            src={back}
+            className="bg-gray-950 rounded-full w-7 h-7"
+            alt="go back"
+          />
         </button>
         <ul className="flex flex-col items-center justify-center h-full space-y-8">
           {navTags.map((link) => (

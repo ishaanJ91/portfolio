@@ -186,10 +186,10 @@ export default function Projects() {
               style={
                 window.innerWidth > 1500
                   ? {
-                      width: "675px", // Fixed width beyond 1500px
-                      height: "80vh", // Fixed height beyond 1500px
+                      width: "675px",
+                      height: "80vh",
                     }
-                  : undefined // No inline style for widths less than or equal to 1500px
+                  : undefined
               }
             >
               <div className="flex flex-col justify-between h-full xl:p-8 lg:p-4">
