@@ -178,11 +178,19 @@ export default function Projects() {
             <div
               key={project.id}
               className={`project-card flex-shrink-0 bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl 
-                ${
-                  isMobileView
-                    ? "md:w-[70vw] md:h-[70vh] xs:w-[75vw] xs:h-[73vh]"
-                    : "xl:w-[45vw] xl:h-[80vh] lg:w-[50vw] lg:h-[80vh]"
-                }`}
+              ${
+                isMobileView
+                  ? "md:w-[70vw] md:h-[70vh] xs:w-[75vw] xs:h-[73vh]"
+                  : "w-[45vw] h-[80vh] xl:w-[45vw] xl:h-[80vh]"
+              }`}
+              style={
+                window.innerWidth > 1500
+                  ? {
+                      width: "675px", // Fixed width beyond 1500px
+                      height: "80vh", // Fixed height beyond 1500px
+                    }
+                  : undefined // No inline style for widths less than or equal to 1500px
+              }
             >
               <div className="flex flex-col justify-between h-full xl:p-8 lg:p-4">
                 <div className="flex flex-col gap-4">
@@ -192,8 +200,9 @@ export default function Projects() {
                   </span>
 
                   <div
-                    className={`flex flex-row justify-between px-1
-                  ${isMobileView ? "flex-col gap-3" : ""}`}
+                    className={`flex flex-row justify-between px-1 ${
+                      isMobileView ? "flex-col gap-3" : ""
+                    }`}
                   >
                     <div className="languages-list flex gap-4 py-2">
                       {project.languages.map((lang, index) => (

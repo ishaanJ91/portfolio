@@ -12,7 +12,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider>
       <Navbar />
-      <div className="bg-background text-primary min-h-screen max-w-1400 mx-auto">
+      <div className="bg-background text-primary min-h-screen max-w-1500 mx-auto">
         <About />
         <Projects />
         <Contact />

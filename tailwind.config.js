@@ -27,7 +27,7 @@ module.exports = {
         "border-color": "rgb(75,85,99)",
       },
       maxWidth: {
-        1400: "1400px",
+        1500: "1500px",
       },
     },
   },
