@@ -7,6 +7,7 @@ import bitcoin_pred from "../assets/rf_cnn_lstm_price_prediction.png";
 import airbnb from "../assets/airbnb.png";
 import crypto from "../assets/crypto.png";
 import pomodoro from "../assets/pomodoro.png";
+import spotify from "../assets/spotify.png";
 
 import reactLogo from "../assets/react-original.svg";
 import tailwindLogo from "../assets/tailwindcss-original.svg";
@@ -18,6 +19,7 @@ import matplotlibLogo from "../assets/matplotlib-original.svg";
 import kerasLogo from "../assets/keras-original.svg";
 import htmlLogo from "../assets/html5-plain.svg";
 import cssLogo from "../assets/css3-original.svg";
+import typescriptLogo from "../assets/typescript.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +36,16 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 1,
+    title: "Spotify Higher-Lower,",
+    description:
+      "a React-based game that challenges players to guess which songs have higher stream counts on Spotify",
+    image: spotify,
+    languages: [reactLogo, typescriptLogo, tailwindLogo],
+    deployed: "Deployed • Jan 2025",
+    github: "https://github.com/ishaanJ91/spotify-higher-lower/tree/main",
+  },
+  {
+    id: 2,
     title: "LandStat,",
     description:
       "a MERN stack application that visualizes NDVI data, allowing users to examine global vegetation health.",
@@ -43,7 +55,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/landsat",
   },
   {
-    id: 2,
+    id: 3,
     title: "Bitcoin Price Prediction,",
     description:
       "uses a hybrid model to predict Bitcoin prices based on 5 years of historical data",
@@ -53,7 +65,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/bitcoin-prediction",
   },
   {
-    id: 3,
+    id: 4,
     title: "AirBnb Clone,",
     description:
       "is a MERN stack clone that replicates Airbnb's key features, allowing users to search, book, and manage accommodations.",
@@ -63,7 +75,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/airdnd-clone",
   },
   {
-    id: 4,
+    id: 5,
     title: "CryptoTrack,",
     description:
       "is a web application that leverages public apis to provide details, comparisons, and historical data on cryptocurrencies.",
@@ -73,7 +85,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/Crypto-tracker",
   },
   {
-    id: 5,
+    id: 6,
     title: "Minimalist-Pomodoro,",
     description:
       "is a Pomodoro timer website that enhances productivity by structuring work into intervals with short and long breaks.",
