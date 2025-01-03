@@ -4,6 +4,8 @@ import { useTheme } from ".//ThemeContext";
 import profile from "../assets/profile.webp";
 import github_black from "../assets/github-round-svgrepo-com (1).svg";
 import linked_black from "../assets/linkedin-round-svgrepo-com (1).svg";
+import github_white from "../assets/github_white.svg";
+import linkedin_white from "../assets/linkedin_white.svg";
 
 import htmlLogo from "../assets/html.svg";
 import cssLogo from "../assets/css.svg";
@@ -17,6 +19,8 @@ import javaLogo from "../assets/javascript.svg";
 export default function About() {
   const introRef = useRef<HTMLDivElement>(null);
   const { isLightMode } = useTheme();
+  const githubDynamic = isLightMode ? github_white : github_black;
+  const linkedinDynamic = isLightMode ? linkedin_white : linked_black;
 
   return (
     <div
@@ -43,7 +47,7 @@ export default function About() {
           <div className="flex flex-row gap-4 pt-4 md:pt-2 sm:pt-3 xs:pt-2 md:gap-3">
             <a href="https://github.com/ishaanJ91" target="_blank">
               <img
-                src={github_black}
+                src={githubDynamic}
                 alt="GitHub"
                 className="lg:w-9 lg:h-9 md:w-6 md:h-6 sm:h-6 sm:w-6 xs:h-8 xs:w-8 rounded-full"
               />
@@ -51,7 +55,7 @@ export default function About() {
 
             <a href="https://www.linkedin.com/in/ishaanj9/" target="_blank">
               <img
-                src={linked_black}
+                src={linkedinDynamic}
                 alt="LinkedIn"
                 className="lg:w-9 lg:h-9 md:w-6 md:h-6 sm:h-6 sm:w-6 xs:h-8 xs:w-8"
               />
