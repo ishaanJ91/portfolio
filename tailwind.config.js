@@ -18,6 +18,7 @@ module.exports = {
         "dark-blue-ps": "rgb(13, 27, 64)",
         "beige-dark": "rgba(32, 32, 32)",
         "project-card-bg": "rgb(24,28,38)",
+        "custom-gray": "#333",
       },
       borderWidth: {
         1: "1.5px",

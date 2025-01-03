@@ -56,9 +56,8 @@ const Card: React.FC<CardProps> = ({
   link,
   linkText,
 }) => {
-  const { isLightMode } = useTheme(); // Access theme state
+  const { isLightMode } = useTheme();
 
-  // Switch GitHub logo dynamically for "Projects" card
   const dynamicIcon =
     title === "Projects" ? (isLightMode ? githubW : githubB) : icon;
 

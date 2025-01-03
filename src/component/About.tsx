@@ -81,7 +81,11 @@ export default function About() {
           </div>
         </div>
         <div className="flex xl:flex-row flex-col xs:my-6 sm:justify-start sm:items-start xs:justify-center xs:items-center xl:justify-between xl:items-center xl:text-center text-2xl text-center xl:gap-6 gap-5">
-          <span className="xl:text-2xl xl:text-center xl:items-center xl:justify-center lg:text-xl md:text-base sm:text-xl xs:text-xl sm:mt-4 text-left xl:border-r-2 xl:border-b-0 text-primary border-beige b-r-0 border-b-2 pr-0 pb-1 xl:pr-4 xl:pb-0 font-semibold">
+          <span
+            className={`xl:text-2xl xl:text-center xl:items-center xl:justify-center lg:text-xl md:text-base sm:text-xl xs:text-xl text-left xl:border-r-2 xl:border-b-0 text-primary ${
+              isLightMode ? `border-custom-gray` : `border-beige`
+            } border-beige b-r-0 border-b-2 pr-0 pb-1 xl:pr-4 xl:pb-0 font-semibold`}
+          >
             Tech Stack
           </span>
           <div className="sm:flex items-center xs:grid xs:py-6 xs:grid-cols-2 xs:justify-center xs:items-center xl:gap-8 lg:gap-6 md:gap-4 sm:gap-6 xs:gap-10">
