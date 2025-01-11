@@ -7,6 +7,7 @@ import Navbar from "./component/Navbar";
 import Projects from "./component/Projects";
 import Contact from "./component/Contact";
 import Footer from "./component/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Contact />
         <Footer />
       </div>
+      <Analytics />
     </ThemeProvider>
   );
 };
