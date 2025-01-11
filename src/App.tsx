@@ -7,7 +7,7 @@ import Navbar from "./component/Navbar";
 import Projects from "./component/Projects";
 import Contact from "./component/Contact";
 import Footer from "./component/Footer";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const App: React.FC = () => {
   return (
