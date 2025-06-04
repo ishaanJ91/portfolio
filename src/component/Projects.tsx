@@ -44,8 +44,8 @@ const projectsData: Project[] = [
       "is a mobile app that helps users find, host, and join pub games in their area. In partnership with Amazon",
     image: niteout,
     languages: [reactLogo, pythonLogo, firebaseLogo, flaskLogo],
-    deployed: "Deployed • Jan 2025",
-    github: "https://github.com/ishaanJ91/sweng25_group13_pubgamenightfinder",
+    deployed: "Deployed • April 2025",
+    github: "https://github.com/ishaanJ91/NiteOut",
   },
   {
     id: 1,
