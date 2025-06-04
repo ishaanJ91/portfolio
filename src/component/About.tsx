@@ -71,7 +71,7 @@ export default function About() {
           </div>
           <div className="text-md sm:text-left xs:text-center py-4">
             <span className="xl:text-xl lg:text-base md:text-sm sm:text-base xs:text-base text-primary">
-              As a 2nd-year Computer Science student at Trinity College Dublin,
+              As a 3rd-year Computer Science student at Trinity College Dublin,
               I excel in full-stack development and solving complex problems.
               With strong academic and project experience in software
               development, AI, and machine learning, I have a deep understanding
