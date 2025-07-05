@@ -19,9 +19,9 @@ const App: React.FC = () => {
         <About />
         <Experience />
         <Projects />
+        <Globe />
         <Contact />
         <Footer />
-        <Globe />
       </div>
       <Analytics />
     </ThemeProvider>

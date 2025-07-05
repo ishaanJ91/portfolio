@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import createGlobe from "cobe";
 import { useSpring } from "react-spring";
 
@@ -10,6 +10,7 @@ import { useSpring } from "react-spring";
 export default function Globe() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
+  const yourLocation = useRef<[number, number] | null>(null);
   const pointerInteractionMovement = useRef(0);
   const fadeMask =
     "radial-gradie</div>nt(circle at 50% 50%, rgb(0, 0, 0) 60%, rgb(0, 0, 0, 0) 70%)";
@@ -51,8 +52,8 @@ export default function Globe() {
       markers: [{ location: [53.349805, -6.26031], size: 0.1 }],
       scale: 1.05,
       onRender: (state) => {
-        state.phi = 2.75 + r.get();
-        state.theta = 0.4; // increased from 0 to shift the globe down
+        state.phi = 10.75 + r.get();
+        state.theta = 0.4;
         state.width = width * 2;
         state.height = width * 2;
       },
