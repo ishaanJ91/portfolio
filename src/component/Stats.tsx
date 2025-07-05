@@ -2,6 +2,38 @@ import React, { useEffect, useState } from "react";
 import githubLogo from "../assets/github.svg";
 import Globe from "./Globe";
 
+import reactLogo from "../assets/react-original.svg";
+import tailwindLogo from "../assets/tailwindcss-original.svg";
+import mongodbLogo from "../assets/mongodb-original.svg";
+import javascriptLogo from "../assets/javascript-original.svg";
+import pythonLogo from "../assets/python-original.svg";
+import matplotlibLogo from "../assets/matplotlib-original.svg";
+import kerasLogo from "../assets/keras-original.svg";
+import htmlLogo from "../assets/html5-plain.svg";
+import cssLogo from "../assets/css3-original.svg";
+import typescriptLogo from "../assets/typescript.svg";
+import firebaseLogo from "../assets/firebase.svg";
+import flaskLogo from "../assets/flask.svg";
+import pandas from "../assets/pandas.svg";
+import tensorflow from "../assets/tensorflow.svg";
+
+const techIcons = {
+  react: reactLogo,
+  tailwindcss: tailwindLogo,
+  mongodb: mongodbLogo,
+  javascript: javascriptLogo,
+  python: pythonLogo,
+  matplotlib: matplotlibLogo,
+  keras: kerasLogo,
+  html5: htmlLogo,
+  css3: cssLogo,
+  typescript: typescriptLogo,
+  firebase: firebaseLogo,
+  flask: flaskLogo,
+  pandas: pandas,
+  tensorflow: tensorflow,
+};
+
 const Stats = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -30,7 +62,7 @@ const Stats = () => {
     return (
       <div className="my-20">
         <div className="flex flex-col justify-center items-center bg-background px-12 w-full">
-          <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
+          <div className="project-card w-full max-w-6xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
             <div className="flex flex-col justify-between h-full xl:p-4 lg:p-2">
               <h3 className="text-xl sm:text-2xl font-semibold text-white">
                 {loading
@@ -95,118 +127,85 @@ const Stats = () => {
   return (
     <div className="my-20">
       <div className="flex flex-col justify-center pt-28 items-center w-full px-10 lg:px-0">
-        <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 items-stretch justify-center gap-8 lg:gap-4 mb-8">
+        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 items-stretch justify-center gap-8 lg:gap-4 mb-8">
           <div className="project-card w-full h-[300px] bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
-            <div className="flex flex-col justify-between h-full xl:p-4 lg:p-2">
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                Tech Stack
-              </h3>
-              <h4 className="mt-2 sm:mt-0 text-lg sm:text-xl text-blue-400 hover:text-blue-500 transition-colors duration-300"></h4>
-              <ul className="space-y-2 pt-2 mt-6"></ul>
-              {/* Stack carousel */}
-              <div className="flex flex-wrap justify-center gap-4 mt-6">
-                {[
-                  "python",
-                  "typescript",
-                  "go",
-                  "cplusplus",
-                  "java",
-                  "javascript",
-                  "fastapi",
-                  "flask",
-                  "mongodb",
-                  "linux",
-                  "aws",
-                  "nextjs",
-                ].map((tech) => (
-                  <img
-                    key={tech}
-                    src={`path_to_icons/${tech}.svg`} // Replace with your actual icon path
-                    alt={`${tech} icon`}
-                    className="w-8 h-8 sm:w-10 sm:h-10"
-                  />
-                ))}
+            {" "}
+            <div className="flex justify-between items-center mb-4">
+              <div className="px-3 py-2 bg-beige border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
+                <img src={githubLogo} alt="GitHub Logo" className="w-6 h-6" />
+                <a
+                  href="https://github.com/ishaanJ91"
+                  target="_blank"
+                  className="text-gray-950 text-base pl-1"
+                >
+                  GitHub Activity{" "}
+                  <b>
+                    <span>↗&#xFE0E;</span>
+                  </b>
+                </a>
               </div>
+              {hoveredDay && (
+                <p className="text-white font-medium text-sm">
+                  {hoveredDay.contributionCount} contributions on{" "}
+                  {new Date(hoveredDay.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </p>
+              )}
+            </div>
+            <div className="overflow-scroll">
+              <div className="flex">
+                <div className="grid grid-cols-53 grid-rows-7 gap-1 grid-flow-col">
+                  {filteredData.map((day, index) => (
+                    <div
+                      key={index}
+                      className={`w-3 h-3 rounded-sm cursor-pointer transition-all duration-200 ${getIntensityClass(
+                        day.contributionLevel
+                      )}`}
+                      onMouseEnter={() => setHoveredDay(day)}
+                      onMouseLeave={() => setHoveredDay(null)}
+                      title={`${
+                        day.contributionCount
+                      } contributions on ${formatDate(day.date)}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Tooltip */}
+              {hoveredDay && (
+                <div className="absolute top-6 right-6 bg-gray-900 text-white p-3 rounded-lg border border-gray-600 mt-4 mb-4 max-w-xs">
+                  <p className="font-medium">
+                    {hoveredDay.contributionCount} contributions
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    {formatDate(hoveredDay.date)}
+                  </p>
+                </div>
+              )}
+            </div>
+            {/* Legend */}
+            <div className="flex items-start justify-start gap-2 text-xs text-gray-400 mt-4">
+              <span>Less</span>
+              <div className="flex space-x-1">
+                <div className="w-3 h-3 bg-gray-800 rounded-sm border border-gray-600"></div>
+                <div className="w-3 h-3 bg-green-900 rounded-sm"></div>
+                <div className="w-3 h-3 bg-green-700 rounded-sm"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-sm"></div>
+                <div className="w-3 h-3 bg-green-300 rounded-sm"></div>
+              </div>
+              <span>More</span>
             </div>
           </div>
           <div className="project-card w-full h-[300px] overflow-hidden bg-project-card-bg border-[#4b5563] border-4 text-primary rounded-xl">
-            <div className="flex flex-col justify-start h-full xl:pt-12 xl:px-12 lg:px-10 lg:pt-10 px-8 pt-8">
+            <div className="flex flex-col justify-start h-full px-8 pt-8">
               <h3 className="text-lg sm:text-md font-semibold text-white">
                 Dublin, Ireland (UTC +01:00)
               </h3>
             </div>
             <Globe />
-          </div>
-        </div>
-        <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
-          <div className="flex justify-between items-center mb-4">
-            <div className="px-4 py-2 bg-beige border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
-              <img src={githubLogo} alt="GitHub Logo" className="w-6 h-6" />
-              <a
-                href="https://github.com/ishaanJ91"
-                target="_blank"
-                className="text-gray-950 text-base"
-              >
-                GitHub Activity{" "}
-                <b>
-                  <span>↗&#xFE0E;</span>
-                </b>
-              </a>
-            </div>
-            {hoveredDay && (
-              <p className="text-white font-medium text-sm">
-                {hoveredDay.contributionCount} contributions on{" "}
-                {new Date(hoveredDay.date).toLocaleDateString("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}
-              </p>
-            )}
-          </div>
-
-          <div className="overflow-scroll">
-            <div className="flex">
-              <div className="grid grid-cols-53 grid-rows-7 gap-1 grid-flow-col">
-                {filteredData.map((day, index) => (
-                  <div
-                    key={index}
-                    className={`w-3 h-3 rounded-sm cursor-pointer transition-all duration-200 ${getIntensityClass(
-                      day.contributionLevel
-                    )}`}
-                    onMouseEnter={() => setHoveredDay(day)}
-                    onMouseLeave={() => setHoveredDay(null)}
-                    title={`${
-                      day.contributionCount
-                    } contributions on ${formatDate(day.date)}`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Tooltip */}
-            {hoveredDay && (
-              <div className="absolute top-6 right-6 bg-gray-900 text-white p-3 rounded-lg border border-gray-600 mt-4 mb-4 max-w-xs">
-                <p className="font-medium">
-                  {hoveredDay.contributionCount} contributions
-                </p>
-                <p className="text-sm text-gray-400">
-                  {formatDate(hoveredDay.date)}
-                </p>
-              </div>
-            )}
-          </div>
-          {/* Legend */}
-          <div className="flex items-start justify-start gap-2 text-xs text-gray-400 mt-4">
-            <span>Less</span>
-            <div className="flex space-x-1">
-              <div className="w-3 h-3 bg-gray-800 rounded-sm border border-gray-600"></div>
-              <div className="w-3 h-3 bg-green-900 rounded-sm"></div>
-              <div className="w-3 h-3 bg-green-700 rounded-sm"></div>
-              <div className="w-3 h-3 bg-green-500 rounded-sm"></div>
-              <div className="w-3 h-3 bg-green-300 rounded-sm"></div>
-            </div>
-            <span>More</span>
           </div>
         </div>
       </div>

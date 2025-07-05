@@ -29,6 +29,7 @@ module.exports = {
       },
       maxWidth: {
         1500: "1500px",
+        935: "935px",
       },
     },
   },

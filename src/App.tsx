@@ -9,7 +9,6 @@ import Contact from "./component/Contact";
 import Footer from "./component/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import Experience from "./component/Experience";
-import Stats from "./component/Stats";
 
 const App: React.FC = () => {
   return (
@@ -19,7 +18,6 @@ const App: React.FC = () => {
         <About />
         <Experience />
         <Projects />
-        <Stats />
         <Contact />
         <Footer />
       </div>

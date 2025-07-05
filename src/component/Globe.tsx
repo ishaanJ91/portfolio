@@ -40,7 +40,7 @@ export default function Globe() {
       devicePixelRatio: 2,
       width: width * 2.2,
       height: width * 2.2,
-      offset: [0, -50],
+      offset: [0, 100],
       phi: 0,
       theta: 0,
       dark: 1,
