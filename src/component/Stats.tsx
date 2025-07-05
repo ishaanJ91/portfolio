@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import githubLogo from "../assets/github.svg";
+import Globe from "./Globe";
 
 const Stats = () => {
   const [data, setData] = useState(null);
@@ -95,33 +96,65 @@ const Stats = () => {
     <div className="my-20">
       <div
         id="experience"
-        className="flex flex-col justify-center items-center bg-background px-12 w-full"
+        className="flex flex-col justify-center items-center bg-background min-w-full"
       >
-        <div className="grid grid-cols-2 items-center justify-center bg-background py-16 px-8 gap-12">
-          <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
+        <div className="w-full max-w-4xl grid grid-cols-2 items-center justify-center gap-4 mb-8">
+          <div className="project-card w-full h-full bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
             <div className="flex flex-col justify-between h-full xl:p-4 lg:p-2">
               <h3 className="text-xl sm:text-2xl font-semibold text-white">
                 Tech Stack
               </h3>
               <h4 className="mt-2 sm:mt-0 text-lg sm:text-xl text-blue-400 hover:text-blue-500 transition-colors duration-300"></h4>
               <ul className="space-y-2 pt-2 mt-6"></ul>
+              {/* Stack carousel */}
+              <div className="flex flex-wrap justify-center gap-4 mt-6">
+                {[
+                  "python",
+                  "typescript",
+                  "go",
+                  "cplusplus",
+                  "java",
+                  "javascript",
+                  "fastapi",
+                  "flask",
+                  "mongodb",
+                  "linux",
+                  "aws",
+                  "nextjs",
+                ].map((tech) => (
+                  <img
+                    key={tech}
+                    src={`path_to_icons/${tech}.svg`} // Replace with your actual icon path
+                    alt={`${tech} icon`}
+                    className="w-8 h-8 sm:w-10 sm:h-10"
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
-            <div className="flex flex-col justify-between h-full xl:p-4 lg:p-2">
-              <h3 className="text-xl sm:text-2xl font-semibold text-white">
-                Tech Stack
+          <div className="project-card w-full h-full overflow-hidden bg-project-card-bg border-[#4b5563] border-4 text-primary rounded-xl">
+            <div className="flex flex-col justify-between h-full xl:p-12 lg:p-10">
+              <h3 className="text-lg sm:text-md font-semibold text-white">
+                Dublin, Ireland (UTC +01:00)
               </h3>
-              <h4 className="mt-2 sm:mt-0 text-lg sm:text-xl text-blue-400 hover:text-blue-500 transition-colors duration-300"></h4>
-              <ul className="space-y-2 pt-2 mt-6"></ul>
             </div>
+            <Globe />
           </div>
         </div>
         <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
           <div className="flex justify-between items-center mb-4">
             <div className="px-4 py-1 bg-beige border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
               <img src={githubLogo} alt="GitHub Logo" className="w-4 h-4" />
-              <span className="text-gray-950">GitHub activity</span>
+              <a
+                href="https://github.com/ishaanJ91"
+                target="_blank"
+                className="text-gray-950"
+              >
+                GitHub Activity{" "}
+                <b>
+                  <span>↗&#xFE0E;</span>
+                </b>
+              </a>
             </div>
             {hoveredDay && (
               <p className="text-white font-medium text-sm">

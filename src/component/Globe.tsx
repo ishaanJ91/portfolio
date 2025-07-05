@@ -38,8 +38,9 @@ export default function Globe() {
     if (!canvasRef?.current) return;
     const globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
-      width: width * 2,
-      height: width * 2,
+      width: width * 2.2,
+      height: width * 2.2,
+      offset: [0, -200],
       phi: 0,
       theta: 0,
       dark: 1,
@@ -70,6 +71,7 @@ export default function Globe() {
       style={{
         width: "100%",
         height: "100%",
+        maxHeight: "150px",
         display: "flex",
         placeItems: "center",
         placeContent: "center",
