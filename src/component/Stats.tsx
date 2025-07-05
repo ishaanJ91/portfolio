@@ -94,12 +94,9 @@ const Stats = () => {
 
   return (
     <div className="my-20">
-      <div
-        id="experience"
-        className="flex flex-col justify-center items-center bg-background min-w-full"
-      >
-        <div className="w-full max-w-4xl grid grid-cols-2 items-center justify-center gap-4 mb-8">
-          <div className="project-card w-full h-full bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
+      <div className="flex flex-col justify-center pt-28 items-center w-full px-10 lg:px-0">
+        <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 items-stretch justify-center gap-8 lg:gap-4 mb-8">
+          <div className="project-card w-full h-[300px] bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
             <div className="flex flex-col justify-between h-full xl:p-4 lg:p-2">
               <h3 className="text-xl sm:text-2xl font-semibold text-white">
                 Tech Stack
@@ -132,8 +129,8 @@ const Stats = () => {
               </div>
             </div>
           </div>
-          <div className="project-card w-full h-full overflow-hidden bg-project-card-bg border-[#4b5563] border-4 text-primary rounded-xl">
-            <div className="flex flex-col justify-between h-full xl:p-12 lg:p-10">
+          <div className="project-card w-full h-[300px] overflow-hidden bg-project-card-bg border-[#4b5563] border-4 text-primary rounded-xl">
+            <div className="flex flex-col justify-start h-full xl:pt-12 xl:px-12 lg:px-10 lg:pt-10 px-8 pt-8">
               <h3 className="text-lg sm:text-md font-semibold text-white">
                 Dublin, Ireland (UTC +01:00)
               </h3>
@@ -143,12 +140,12 @@ const Stats = () => {
         </div>
         <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
           <div className="flex justify-between items-center mb-4">
-            <div className="px-4 py-1 bg-beige border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
-              <img src={githubLogo} alt="GitHub Logo" className="w-4 h-4" />
+            <div className="px-4 py-2 bg-beige border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
+              <img src={githubLogo} alt="GitHub Logo" className="w-6 h-6" />
               <a
                 href="https://github.com/ishaanJ91"
                 target="_blank"
-                className="text-gray-950"
+                className="text-gray-950 text-base"
               >
                 GitHub Activity{" "}
                 <b>
