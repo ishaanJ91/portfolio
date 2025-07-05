@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import githubLogo from "../assets/github.svg";
 
 const Stats = () => {
   const [data, setData] = useState(null);
@@ -56,9 +57,9 @@ const Stats = () => {
       case "FIRST_QUARTILE":
         return "bg-green-900 hover:bg-green-800";
       case "SECOND_QUARTILE":
-        return "bg-green-700 hover:bg-green-600";
-      case "THIRD_QUARTILE":
         return "bg-green-500 hover:bg-green-400";
+      case "THIRD_QUARTILE":
+        return "bg-green-300 hover:bg-green-200";
       case "FOURTH_QUARTILE":
         return "bg-green-300 hover:bg-green-200";
       default:
@@ -76,18 +77,18 @@ const Stats = () => {
   };
 
   const monthNames = {
-    0: "Jan",
-    1: "Feb",
-    2: "Mar",
-    3: "Apr",
-    4: "May",
-    5: "Jun",
-    6: "Jul",
-    7: "Aug",
-    8: "Sep",
-    9: "Oct",
-    10: "Nov",
-    11: "Dec",
+    1: "Jan",
+    2: "Feb",
+    3: "Mar",
+    4: "Apr",
+    5: "May",
+    6: "Jun",
+    7: "Jul",
+    8: "Aug",
+    9: "Sep",
+    10: "Oct",
+    11: "Nov",
+    12: "Dec",
   };
 
   return (
@@ -118,15 +119,9 @@ const Stats = () => {
         </div>
         <div className="project-card w-full max-w-4xl bg-project-card-bg border-[#4b5563] border-4 text-primary p-8 rounded-xl">
           <div className="flex justify-between items-center mb-4">
-            <div className="px-4 py-1 bg-[#0d1117] border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
-              <svg
-                className="w-4 h-4 fill-white"
-                viewBox="0 0 16 16"
-                aria-hidden="true"
-              >
-                <path d="M8 0C3.58..."></path>
-              </svg>
-              <span>GitHub activity</span>
+            <div className="px-4 py-1 bg-beige border border-[#30363d] rounded-full text-white text-sm font-semibold flex items-center space-x-2">
+              <img src={githubLogo} alt="GitHub Logo" className="w-4 h-4" />
+              <span className="text-gray-950">GitHub activity</span>
             </div>
             {hoveredDay && (
               <p className="text-white font-medium text-sm">
@@ -134,50 +129,45 @@ const Stats = () => {
                 {new Date(hoveredDay.date).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
+                  year: "numeric",
                 })}
               </p>
             )}
           </div>
 
-          {/* Month labels */}
-          <div className="flex justify-between text-xs text-gray-400 mb-2 ml-8">
-            {Object.values(monthNames).map((month, index) => (
-              <span key={index}>{month}</span>
-            ))}
-          </div>
-
-          <div className="flex">
-            <div className="grid grid-cols-53 grid-rows-7 gap-1 grid-flow-col">
-              {filteredData.map((day, index) => (
-                <div
-                  key={index}
-                  className={`w-3 h-3 rounded-sm cursor-pointer transition-all duration-200 ${getIntensityClass(
-                    day.contributionLevel
-                  )}`}
-                  onMouseEnter={() => setHoveredDay(day)}
-                  onMouseLeave={() => setHoveredDay(null)}
-                  title={`${
-                    day.contributionCount
-                  } contributions on ${formatDate(day.date)}`}
-                />
-              ))}
+          <div className="overflow-scroll">
+            <div className="flex">
+              <div className="grid grid-cols-53 grid-rows-7 gap-1 grid-flow-col">
+                {filteredData.map((day, index) => (
+                  <div
+                    key={index}
+                    className={`w-3 h-3 rounded-sm cursor-pointer transition-all duration-200 ${getIntensityClass(
+                      day.contributionLevel
+                    )}`}
+                    onMouseEnter={() => setHoveredDay(day)}
+                    onMouseLeave={() => setHoveredDay(null)}
+                    title={`${
+                      day.contributionCount
+                    } contributions on ${formatDate(day.date)}`}
+                  />
+                ))}
+              </div>
             </div>
+
+            {/* Tooltip */}
+            {hoveredDay && (
+              <div className="absolute top-6 right-6 bg-gray-900 text-white p-3 rounded-lg border border-gray-600 mt-4 mb-4 max-w-xs">
+                <p className="font-medium">
+                  {hoveredDay.contributionCount} contributions
+                </p>
+                <p className="text-sm text-gray-400">
+                  {formatDate(hoveredDay.date)}
+                </p>
+              </div>
+            )}
           </div>
-
-          {/* Tooltip */}
-          {hoveredDay && (
-            <div className="absolute top-6 right-6 bg-gray-900 text-white p-3 rounded-lg border border-gray-600 mt-4 mb-4 max-w-xs">
-              <p className="font-medium">
-                {hoveredDay.contributionCount} contributions
-              </p>
-              <p className="text-sm text-gray-400">
-                {formatDate(hoveredDay.date)}
-              </p>
-            </div>
-          )}
-
           {/* Legend */}
-          <div className="flex items-center justify-between text-xs text-gray-400 mt-4">
+          <div className="flex items-start justify-start gap-2 text-xs text-gray-400 mt-4">
             <span>Less</span>
             <div className="flex space-x-1">
               <div className="w-3 h-3 bg-gray-800 rounded-sm border border-gray-600"></div>
