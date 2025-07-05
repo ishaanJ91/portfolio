@@ -9,7 +9,7 @@ import Contact from "./component/Contact";
 import Footer from "./component/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import Experience from "./component/Experience";
-import Globe from "./component/Globe";
+import Stats from "./component/Stats";
 
 const App: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <About />
         <Experience />
         <Projects />
-        <Globe />
+        <Stats />
         <Contact />
         <Footer />
       </div>
