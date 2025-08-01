@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+}
+
+.scroll-container {
+  width: 400vw;
+  display: flex;
+}
+
+.background-transition {
+  transition: background 0.5s ease;
+  height: 100%;
+  width: 100%;
+}
+.project-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.project-inner-container {
+  display: flex;
+  gap: 10vw;
+  scroll-snap-align: center;
+  width: max-content;
+}

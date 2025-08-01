@@ -1,0 +1,78 @@
+:root {
+  --bg-color: rgb(3, 7, 18);
+  --navbar-bg-color: rgb(13, 27, 64);
+  --text-color: #e2e8f0;
+  --card-bg-color: #efece3;
+  --card-heading-color: #000000;
+  --card-description-color: rgb(31, 41, 55);
+}
+
+:root.light {
+  --bg-color: #efece3;
+  --navbar-bg-color: rgb(156, 156, 156);
+  --text-color: #333;
+  --card-bg-color: rgb(24, 28, 38);
+  --card-heading-color: white;
+  --card-description-color: rgb(208, 208, 208);
+  --link-color: #89bbea;
+  --link-hover-color: #2b6cb0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 100vw;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  background-color: var(--bg-color);
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.text-project-card {
+  color: var(--text-color);
+}
+
+.bg-background {
+  background-color: var(--bg-color);
+}
+
+.text-primary {
+  color: var(--text-color);
+}
+
+.text-project-card {
+  color: var(--text-color);
+}
+
+.bg-contact-card {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-card-heading {
+  color: var(--card-heading-color);
+  transition: color 0.3s ease;
+}
+
+.text-card-description {
+  color: var(--card-description-color);
+  transition: color 0.3s ease;
+}
