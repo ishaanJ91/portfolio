@@ -10,6 +10,7 @@ import pomodoro from "../assets/pomodoro.png";
 import spotify from "../assets/spotify.png";
 import niteout from "../assets/niteout.png";
 import nltk from "../assets/nltk.png";
+import gara from "../assets/gara.png";
 
 import reactLogo from "../assets/react-original.svg";
 import tailwindLogo from "../assets/tailwindcss-original.svg";
@@ -42,16 +43,26 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: 0,
+    title: "GARA,",
+    description:
+      "is a LLM-driven GitHub bot that automates code reviews on pull requests using a fine-tuned Mistral-7B model.",
+    image: gara,
+    languages: [pythonLogo],
+    deployed: "Deployed • July 2025",
+    github: "https://github.com/ishaanJ91/GARA",
+  },
+  {
+    id: 1,
     title: "Sentiment Analysis,",
     description:
       "compares sentiment results using different models on Amazon product reviews",
     image: nltk,
-    languages: [pythonLogo, matplotlibLogo, tensorflow, pandas],
+    languages: [pythonLogo, matplotlibLogo, tensorflow],
     deployed: "Deployed • June 2025",
     github: "https://github.com/ishaanJ91/amazon-sentiment-analysis",
   },
   {
-    id: 1,
+    id: 2,
     title: "NiteOut,",
     description:
       "is a mobile app that helps users find, host, and join pub games in their area. In partnership with Amazon",
@@ -61,7 +72,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/NiteOut",
   },
   {
-    id: 2,
+    id: 3,
     title: "Spotify Higher-Lower,",
     description:
       "a React-based game that challenges players to guess which songs have higher stream counts on Spotify",
@@ -71,7 +82,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/spotify-higher-lower/tree/main",
   },
   {
-    id: 3,
+    id: 4,
     title: "LandStat,",
     description:
       "a MERN stack application that visualizes NDVI data, allowing users to examine global vegetation health.",
@@ -81,7 +92,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/landsat",
   },
   {
-    id: 4,
+    id: 5,
     title: "Bitcoin Price Prediction,",
     description:
       "uses a hybrid model to predict Bitcoin prices based on 5 years of historical data",
@@ -91,7 +102,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/bitcoin-prediction",
   },
   {
-    id: 5,
+    id: 6,
     title: "AirBnb Clone,",
     description:
       "is a MERN stack clone that replicates Airbnb's key features, allowing users to search, book, and manage accommodations.",
@@ -101,7 +112,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/airdnd-clone",
   },
   {
-    id: 6,
+    id: 7,
     title: "CryptoTrack,",
     description:
       "is a web application that leverages public apis to provide details, comparisons, and historical data on cryptocurrencies.",
@@ -111,7 +122,7 @@ const projectsData: Project[] = [
     github: "https://github.com/ishaanJ91/Crypto-tracker",
   },
   {
-    id: 7,
+    id: 8,
     title: "Minimalist-Pomodoro,",
     description:
       "is a Pomodoro timer website that enhances productivity by structuring work into intervals with short and long breaks.",
