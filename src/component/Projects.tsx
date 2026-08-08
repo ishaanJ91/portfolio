@@ -25,7 +25,6 @@ import cssLogo from "../assets/css3-original.svg";
 import typescriptLogo from "../assets/typescript.svg";
 import firebaseLogo from "../assets/firebase.svg";
 import flaskLogo from "../assets/flask.svg";
-import pandas from "../assets/pandas.svg";
 import tensorflow from "../assets/tensorflow.svg";
 
 gsap.registerPlugin(ScrollTrigger);

@@ -5,12 +5,12 @@ import back from "../assets/back.svg";
 import light from "../assets/light.svg";
 import dark from "../assets/dark.svg";
 
+const NAV_TAGS = ["About", "Projects", "Contact"];
+
 export default function Navbar() {
   const { isLightMode, toggleTheme } = useTheme();
   const [active, setActive] = React.useState("Home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-
-  const navTags = ["About", "Projects", "Contact"];
 
   const handleSetActive = (link: string) => {
     setActive(link);
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const sections = navTags
+      const sections = NAV_TAGS
         .map((tag) => document.getElementById(tag.toLowerCase()))
         .filter(Boolean);
 
@@ -62,9 +62,10 @@ export default function Navbar() {
             </button>
           </div>
           <div className="hidden md:flex ml-10 space-x-4">
-            {navTags.map((link) => (
-              <a
+            {NAV_TAGS.map((link) => (
+              <button
                 key={link}
+                type="button"
                 onClick={() => handleSetActive(link)}
                 className={`text-lg font-medium px-3 py-2 rounded-md cursor-pointer transition-colors duration-200 ${
                   active === link
@@ -73,7 +74,7 @@ export default function Navbar() {
                 }`}
               >
                 {link}
-              </a>
+              </button>
             ))}
             {/* Theme toggle button */}
             <button onClick={toggleTheme} className="mr-4 focus:outline-none">
@@ -104,9 +105,10 @@ export default function Navbar() {
           />
         </button>
         <ul className="flex flex-col items-center justify-center h-full space-y-8">
-          {navTags.map((link) => (
+          {NAV_TAGS.map((link) => (
             <li key={link}>
-              <a
+              <button
+                type="button"
                 onClick={() => handleSetActive(link)}
                 className={`block text-4xl font-medium cursor-pointer ${
                   active === link
@@ -119,7 +121,7 @@ export default function Navbar() {
                 }`}
               >
                 {link}
-              </a>
+              </button>
             </li>
           ))}
           {/* Theme toggle button for mobile */}
