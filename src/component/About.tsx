@@ -41,7 +41,8 @@ export default function About() {
             Ishaan Jain
           </h2>
           <p className="xl:text-base md:text-xs lg:text-sm sm:text-xs sm:w-60 md:w-fit sm:py-1 xs:text-base xs:w-60 xs:py-1 xs:text-center sm:text-left py-2">
-            Student @ Trinity College Dublin, Ireland | Full-Stack Dev
+            Ex-SWE Intern @ Pinterest <br />
+            Student @ Trinity College Dublin, Ireland
           </p>
 
           <div className="flex flex-row gap-4 pt-4 md:pt-2 sm:pt-3 xs:pt-2 md:gap-3">
@@ -71,7 +72,7 @@ export default function About() {
           </div>
           <div className="text-md sm:text-left xs:text-center py-4">
             <span className="xl:text-xl lg:text-base md:text-sm sm:text-base xs:text-base text-primary">
-              As a 3rd-year Computer Science student at Trinity College Dublin,
+              As a 4th-year Computer Science student at Trinity College Dublin,
               I excel in full-stack development and solving complex problems.
               With strong academic and project experience in software
               development, AI, and machine learning, I have a deep understanding

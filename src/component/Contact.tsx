@@ -3,7 +3,7 @@ import { useTheme } from "./ThemeContext"; // Corrected path
 import githubB from "../assets/github.svg";
 import githubW from "../assets/white-github.svg";
 import linkedin from "../assets/linkedin-original.svg";
-import substack from "../assets/substack-icon.svg";
+import youtube from "../assets/youtube-icon.svg";
 import google from "../assets/google-original.svg";
 
 interface CardProps {
@@ -16,36 +16,36 @@ interface CardProps {
 
 const cardData: CardProps[] = [
   {
-    icon: githubB,
-    title: "Projects",
-    description:
-      "I showcase personal projects and contribute to resolving issues on GitHub, either through code contributions or by reporting identified issues.",
-    link: "https://github.com/ishaanJ91",
-    linkText: "View profile",
-  },
-  {
-    icon: linkedin,
-    title: "LinkedIn",
-    description:
-      "I share my professional journey on LinkedIn, including achievements and extracurriculars to build industry connections.",
-    link: "https://www.linkedin.com/in/ishaanj9/",
-    linkText: "Connect",
-  },
-  {
-    icon: substack,
-    title: "Blog",
-    description:
-      "I write on Substack about productivity hacks, mental health tips, and a student's perspective on college life.",
-    link: "https://ishaanjain91.substack.com/",
-    linkText: "Read",
-  },
-  {
     icon: google,
     title: "Gmail",
     description:
       "You can also easily reach me through Gmail for any inquiries.",
     link: "mailto:jaini@tcd.ie",
     linkText: "Email me",
+  },
+  {
+    icon: linkedin,
+    title: "LinkedIn",
+    description:
+      "I share my professional journey and document my social connections on LinkedIn.",
+    link: "https://www.linkedin.com/in/ishaanj9/",
+    linkText: "Connect",
+  },
+  {
+    icon: githubB,
+    title: "Projects",
+    description:
+      "I showcase personal projects and document my code on GitHub.",
+    link: "https://github.com/ishaanJ91",
+    linkText: "View profile",
+  },
+  {
+    icon: youtube,
+    title: "Creative stuff",
+    description:
+      "Documenting my life. Finding my niche.",
+    link: "https://www.youtube.com/@InsaanJain",
+    linkText: "Check it out",
   },
 ];
 
