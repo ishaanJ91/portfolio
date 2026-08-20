@@ -5,7 +5,7 @@ import back from "../assets/back.svg";
 import light from "../assets/light.svg";
 import dark from "../assets/dark.svg";
 
-const NAV_TAGS = ["About", "Projects", "Contact"];
+const NAV_TAGS = ["About", "Experience", "Projects", "Contact"];
 
 export default function Navbar() {
   const { isLightMode, toggleTheme } = useTheme();

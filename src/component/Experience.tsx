@@ -11,7 +11,17 @@ const Experience: React.FC = () => {
         "Designed and shipped a production MCP server for Pinterest’s Experience HQ platform that exposes 13 read-only tools for internal AI agents",
         "Architected the service on Kubernetes with OAuth 2.1 authentication via an Envoy sidecar, JWT-based identity propagation, and audit logging aligned with Pinterest’s MCP Security Standards, all backed by automated CI/CD deployment pipelines", 
         "Instrumented end-to-end observability with dashboards for latency, error rates, and per-endpoint usage, and the service has processed 3,500+ API calls in production.",
-        " Led the migration of a legacy internal debugging tool from a V3 UI to a modern React and Gestalt interface, refactoring core pages, adding configurable search and filtering, and authoring a comprehensive Jest test suite."
+        "Led the migration of a legacy internal debugging tool from a V3 UI to a modern React and Gestalt interface, refactoring core pages, adding configurable search and filtering, and authoring a comprehensive Jest test suite."
+      ],
+    },
+    {
+      title: "Frontend Developer",
+      company: "HackEurope",
+      links: "",
+      period: "Jan 2026 - May 2026",
+      description: [
+        "Built core product surfaces in React/TypeScript for Europe’s largest student hackathon, serving 1,000+ applicants across Ireland, France and Sweden.",
+        "Engineered the end-to-end applicant registration portal and built internal evaluation dashboards for event organizers to streamline application workflows.",
       ],
     },
     {

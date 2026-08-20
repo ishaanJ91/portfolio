@@ -31,9 +31,8 @@ export default function About() {
         <img
           src={profile}
           alt="Profile"
-          className="rounded-full
-      lg:w-52 lg:h-52 xl:w-64 xl:h-64 md:w-44 md:h-44 sm:w-36 sm:h-36 xs:w-64 xs:h-64
-      object-cover mb-4"
+          className="rounded-full object-cover object-center overflow-hidden shrink-0
+      lg:w-52 lg:h-52 xl:w-64 xl:h-64 md:w-44 md:h-44 sm:w-36 sm:h-36 xs:w-64 xs:h-64"
         />
 
         <div className="flex flex-col text-primary sm:items-start xs:items-center">
@@ -42,6 +41,7 @@ export default function About() {
           </h2>
           <p className="xl:text-base md:text-xs lg:text-sm sm:text-xs sm:w-60 md:w-fit sm:py-1 xs:text-base xs:w-60 xs:py-1 xs:text-center sm:text-left py-2">
             Ex-SWE Intern @ Pinterest <br />
+            Ex-Frontend Developer @ HackEurope <br />
             Student @ Trinity College Dublin, Ireland
           </p>
 
