@@ -42,7 +42,7 @@ export default function About() {
           <p className="xl:text-base md:text-xs lg:text-sm sm:text-xs sm:w-60 md:w-fit sm:py-1 xs:text-base xs:w-60 xs:py-1 xs:text-center sm:text-left py-2">
             Ex-SWE Intern @ Pinterest <br />
             Ex-Frontend Developer @ HackEurope <br />
-            Student @ Trinity College Dublin, Ireland
+            Final Year @ Trinity College Dublin, Ireland
           </p>
 
           <div className="flex flex-row gap-4 pt-4 md:pt-2 sm:pt-3 xs:pt-2 md:gap-3">

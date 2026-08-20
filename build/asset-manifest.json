@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c589c61d.css",
-    "main.js": "/static/js/main.24684bf9.js",
+    "main.js": "/static/js/main.f1934d33.js",
     "static/js/453.ad7768ec.chunk.js": "/static/js/453.ad7768ec.chunk.js",
     "static/media/landsat.gif": "/static/media/landsat.8dc2d4ac0e8cf13847a7.gif",
     "static/media/airbnb.png": "/static/media/airbnb.687037a6062ceb863efd.png",
@@ -51,11 +51,11 @@
     "static/media/html5-plain.svg": "/static/media/html5-plain.69274ea277b1ee86ba50abd24b291122.svg",
     "static/media/tensorflow.svg": "/static/media/tensorflow.d134800405cb87bd8c207af58dff37cd.svg",
     "main.c589c61d.css.map": "/static/css/main.c589c61d.css.map",
-    "main.24684bf9.js.map": "/static/js/main.24684bf9.js.map",
+    "main.f1934d33.js.map": "/static/js/main.f1934d33.js.map",
     "453.ad7768ec.chunk.js.map": "/static/js/453.ad7768ec.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c589c61d.css",
-    "static/js/main.24684bf9.js"
+    "static/js/main.f1934d33.js"
   ]
 }
